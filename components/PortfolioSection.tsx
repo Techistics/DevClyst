@@ -4,39 +4,39 @@ import Link from "next/link";
 const projects = [
   {
     id: 1,
-    title: "Techistics CRM",
-    description: "Complete CRM for study abroad consultancies.",
-    image: "/portfolio/p1.png",
+    title: "Consulty CRM",
+    description: "Multi-tenant CRM for study abroad consultancies with Kanban pipeline and analytics.",
+    image: "/consulty.png",
   },
   {
     id: 2,
-    title: "E-commerce Platform",
-    description: "Modern online store with seamless shopping.",
-    image: "/portfolio/p2.png",
+    title: "Khaadi E-commerce",
+    description: "Modern online store with filters, discount codes, and mobile-first design.",
+    image: "/khaadi.png",
   },
   {
     id: 3,
-    title: "Trading Platform",
-    description: "Journaling platform with AI-backed analytics.",
-    image: "/portfolio/p3.png",
+    title: "Finjex SaaS Platform",
+    description: "Multi-panel SaaS with AI-driven analytics, deal tracking, and live notifications.",
+    image: "/finjex.png",
   },
   {
     id: 4,
-    title: "Food Delivery App",
-    description: "Multi-vendor food delivery mobile app.",
-    image: "/portfolio/p4.png",
+    title: "Byte & Bite Bistro",
+    description: "Restaurant website with menu showcase, reservations, and testimonials.",
+    image: "/food.png",
   },
   {
     id: 5,
-    title: "Luxury Web Store",
-    description: "Premium jewellery store with elegant UX.",
-    image: "/portfolio/p5.png",
+    title: "Hexashop Online Shopping",
+    description: "Creative grid-layout store with department collections and high-CTR product cards.",
+    image: "/hexa.png",
   },
   {
     id: 6,
-    title: "SaaS Dashboard",
-    description: "Analytics platform for business insights.",
-    image: "/portfolio/p6.png",
+    title: "Little Fashion Hub",
+    description: "Minimalist fashion storefront with lifestyle storytelling and fluid layout transitions.",
+    image: "/little.png",
   },
 ];
 
@@ -44,7 +44,7 @@ export default function PortfolioSection() {
   return (
     <section className="py-20 px-4 w-full bg-transparent">
       <div className="max-w-6xl mx-auto flex flex-col items-center">
-        
+
         {/* Pill Label */}
         <div className="flex justify-center mb-6">
           <span className="border border-gray-300 bg-white rounded-full px-4 py-1 text-sm text-gray-500 font-medium shadow-sm">
@@ -93,7 +93,7 @@ export default function PortfolioSection() {
         {/* View All Button */}
         <div className="mt-12 flex justify-center">
           <Link
-            href="#"
+            href="/customized"
             className="bg-black text-white rounded-full px-8 py-3 font-semibold text-[15px] hover:bg-gray-800 transition-colors shadow-sm"
           >
             View All

@@ -16,7 +16,7 @@ export default function Home() {
       <LogoMarquee />
       <FeaturesSection />
       <VideoSection />
-      <ReelsCarousel />
+      {/* <ReelsCarousel /> */}
       <PortfolioSection />
       <DeveloperStrip />
       <TestimonialsSection />

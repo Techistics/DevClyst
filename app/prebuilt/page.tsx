@@ -10,79 +10,61 @@ import { fadeInUpVariant } from "@/lib/animations";
 import TestimonialsSection from "@/components/TestimonialsSection";
 
 export default function PrebuiltPage() {
-  const [activeTab, setActiveTab] = useState<"saas" | "templates" | "websites" | "applications">("saas");
+  const [activeTab, setActiveTab] = useState<"websites" | "applications" | "templates" | "saas">("websites");
   const [hoveredCardImg, setHoveredCardImg] = useState<string | null>(null);
   const [hoveredCardTitle, setHoveredCardTitle] = useState<string | null>(null);
   const [hoveredLink, setHoveredLink] = useState<string | null>(null);
 
-  const projectData = {
-    saas: [
+  const projectData: Record<typeof activeTab, Array<{
+    id: string;
+    title: string;
+    img: string;
+    link: string;
+    bullets: Array<{ num: string; text: string }>;
+  }>> = {
+    websites: [
       {
-        id: "saas-1",
-        title: "Techistics CRM",
-        img: "/portfolio/techistics.png",
-        link: "#",
+        id: "web-1",
+        title: "Consulty CRM",
+        img: "/consulty.png", 
+        link: "https://devclystcrm.vercel.app/",
         bullets: [
-          { num: "01", text: "Multi-tenant CRM built for study abroad consultancies." },
-          { num: "02", text: "Kanban pipelines, lead tracking, WhatsApp logging built-in." },
-          { num: "03", text: "Role-based access: Admin, Pro, and Member workspaces." },
-          { num: "04", text: "Document checklist, reminders, analytics — all included." }
+          { num: "01", text: "Multi-tenant workspaces with Admin, Pro, and Member roles." },
+          { num: "02", text: "Kanban pipeline boards for visual lead management." },
+          { num: "03", text: "WhatsApp message logging and follow-up templates built-in." },
+          { num: "04", text: "Document checklist, reminders, and analytics dashboard." }
         ]
       },
       {
-        id: "saas-2",
-        title: "Multi-vendor E-commerce",
-        img: "/portfolio/ecom.png",
+        id: "web-2",
+        title: "Little Fashion Hub",
+        img: "/little.png", 
         link: "#",
         bullets: [
-          { num: "01", text: "Ready-made multi-vendor marketplace with seller dashboards." },
-          { num: "02", text: "Product listings, orders, payments and reviews built-in." },
-          { num: "03", text: "Admin panel with full control over vendors and orders." },
-          { num: "04", text: "Mobile-first responsive design, ready to deploy in days." }
-        ]
-      },
-      {
-        id: "saas-3",
-        title: "Booking & Appointment SaaS",
-        img: "/portfolio/booking.png",
-        link: "#",
-        bullets: [
-          { num: "01", text: "Online booking system for clinics, salons, and services." },
-          { num: "02", text: "Calendar management, slot booking, and reminders." },
-          { num: "03", text: "Customer portal and staff management dashboard." },
-          { num: "04", text: "Payment integration and automated confirmation emails." }
+          { num: "01", text: "Category-wise product listings with filters and fast search." },
+          { num: "02", text: "Quick checkout with discount codes and first-order offers." },
+          { num: "03", text: "SEO-friendly structure with dynamic product showcase." },
+          { num: "04", text: "Mobile-first responsive design optimised for conversions." }
         ]
       }
     ],
-    templates: [
+    applications: [
       {
-        id: "tpl-1",
-        title: "Startup Landing Page",
-        img: "/portfolio/landing.png",
+        id: "app-1",
+        title: "Food Delivery App",
+        img: "/hero.png", 
         link: "#",
         bullets: [
-          { num: "01", text: "High-converting landing page template for startups." },
-          { num: "02", text: "Hero, features, testimonials, FAQ and CTA sections included." },
-          { num: "03", text: "Animated with Framer Motion for smooth interactions." },
-          { num: "04", text: "Built in Next.js — easy to customize and deploy." }
-        ]
-      },
-      {
-        id: "tpl-2",
-        title: "Agency Portfolio Template",
-        img: "/portfolio/agency.png",
-        link: "#",
-        bullets: [
-          { num: "01", text: "Clean portfolio template for creative agencies." },
-          { num: "02", text: "Case study pages, team section, and contact form." },
-          { num: "03", text: "Dark/light mode, fully responsive design." },
-          { num: "04", text: "Next.js + Tailwind — ready to customize in hours." }
+          { num: "01", text: "Customer, restaurant, and driver panels in one system." },
+          { num: "02", text: "Real-time order tracking with live map integration." },
+          { num: "03", text: "Push notifications and in-app chat support." },
+          { num: "04", text: "Flutter-based cross-platform iOS and Android app." }
         ]
       }
     ],
-    // Fallback fallbacks to maintain absolute configuration match with dynamic code types
-    websites: [],
-    applications: []
+    // Added keys here to fulfill the Record type requirement
+    templates: [],
+    saas: []
   };
 
   const prebuiltFaqs = [
@@ -95,7 +77,6 @@ export default function PrebuiltPage() {
 
   return (
     <>
-
       <main style={{ minHeight: "100vh", backgroundColor: "transparent", color: "#0a0a0a" }}>
         
         {/* HERO DISPLAY PANEL */}
@@ -108,61 +89,22 @@ export default function PrebuiltPage() {
             overflow: "hidden"
           }}
         >
-
           {/* Object 1: Left Floating Loop via Framer Motion */}
           <motion.div 
-            animate={{
-              y: ["-50%", "-62%", "-50%"],
-            }}
-            transition={{
-              duration: 4.5,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }}
-            style={{ 
-              position: "absolute", 
-              left: "2%", 
-              top: "55%", 
-              zIndex: 1,
-              pointerEvents: "none",
-              opacity: 0.9
-            }}
+            animate={{ y: ["-50%", "-62%", "-50%"] }}
+            transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
+            style={{ position: "absolute", left: "2%", top: "55%", zIndex: 1, pointerEvents: "none", opacity: 0.9 }}
           >
-            <Image 
-              src="/object1.png" 
-              alt="Floating shape left" 
-              width={150} 
-              height={150} 
-              style={{ objectFit: "contain" }}
-            />
+            <Image src="/object1.png" alt="Floating shape left" width={150} height={150} style={{ objectFit: "contain" }} />
           </motion.div>
 
           {/* Object 2: Right Floating Loop via Framer Motion */}
           <motion.div 
-            animate={{
-              y: ["-50%", "-38%", "-50%"],
-            }}
-            transition={{
-              duration: 5,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }}
-            style={{ 
-              position: "absolute", 
-              right: "2%", 
-              top: "40%", 
-              zIndex: 1,
-              pointerEvents: "none",
-              opacity: 0.9
-            }}
+            animate={{ y: ["-50%", "-38%", "-50%"] }}
+            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+            style={{ position: "absolute", right: "2%", top: "40%", zIndex: 1, pointerEvents: "none", opacity: 0.9 }}
           >
-            <Image 
-              src="/object2.png" 
-              alt="Floating shape right" 
-              width={160} 
-              height={160} 
-              style={{ objectFit: "contain" }}
-            />
+            <Image src="/object2.png" alt="Floating shape right" width={160} height={160} style={{ objectFit: "contain" }} />
           </motion.div>
 
           <div style={{ position: "relative", zIndex: 2, maxWidth: "1200px", margin: "0 auto" }}>
@@ -178,11 +120,8 @@ export default function PrebuiltPage() {
                 letterSpacing: "-0.02em"
               }}
             >
-Prebuilt Saas Software for  
-              <br />
-              Startups
+              Prebuilt Saas Software for <br /> Startups
             </h1>
-
             <p
               style={{
                 color: "#99a1b2",
@@ -232,44 +171,9 @@ Prebuilt Saas Software for
           >
             Our Prebuilt Products
           </h2>
-
-          <div style={{ display: "inline-flex", backgroundColor: "#f3f4f6", borderRadius: "999px", padding: "5px", marginBottom: "50px" }}>
-            <button
-              onClick={() => setActiveTab("saas")}
-              style={{
-                backgroundColor: activeTab === "saas" ? "#fff" : "transparent",
-                borderRadius: "999px",
-                boxShadow: activeTab === "saas" ? "0 2px 4px rgba(6, 155, 175, 0.15)" : "none",
-                color: activeTab === "saas" ? "rgba(6, 155, 175, 1)" : "#9ca3af",
-                fontWeight: activeTab === "saas" ? 600 : 500,
-                padding: "10px 32px",
-                fontSize: "15px",
-                border: "none",
-                cursor: "pointer"
-              }}
-            >
-              SaaS Products
-            </button>
-            <button
-              onClick={() => setActiveTab("templates")}
-              style={{
-                backgroundColor: activeTab === "templates" ? "#fff" : "transparent",
-                borderRadius: "999px",
-                boxShadow: activeTab === "templates" ? "0 2px 4px rgba(6, 155, 175, 0.15)" : "none",
-                color: activeTab === "templates" ? "#069baf" : "#9ca3af",
-                fontWeight: activeTab === "templates" ? 600 : 500,
-                padding: "10px 32px",
-                fontSize: "15px",
-                border: "none",
-                cursor: "pointer"
-              }}
-            >
-              Web Templates
-            </button>
-          </div>
-
           <div style={{ maxWidth: "1120px", margin: "0 auto", padding: "0 12px" }}>
-            {projectData[activeTab as "saas" | "templates"].map((project) => {
+            {projectData[activeTab].map((project, idx) => {
+              const isEven = idx % 2 === 0;
               return (
                 <motion.div
                   key={project.id}
@@ -277,8 +181,18 @@ Prebuilt Saas Software for
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: true, margin: "-100px" }}
-                  style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: "64px", padding: "55px 0", maxWidth: "1024px", margin: "0 auto" }}
+                  style={{ 
+                    display: "flex", 
+                    flexWrap: "wrap", 
+                    alignItems: "center", 
+                    gap: "64px", 
+                    padding: "55px 0", 
+                    maxWidth: "1024px", 
+                    margin: "0 auto",
+                    flexDirection: isEven ? "row" : "row-reverse" 
+                  }}
                 >
+                  {/* IMAGE CONTAINER */}
                   <div style={{ flex: "1 1 400px", display: "flex", justifyContent: "center" }}>
                     <div
                       onMouseEnter={() => setHoveredCardImg(project.id)}
@@ -288,7 +202,7 @@ Prebuilt Saas Software for
                         maxWidth: "512px",
                         borderRadius: "18px",
                         overflow: "hidden",
-                        boxShadow: hoveredCardImg === project.id ? "0 25px 30px -5px rgba(6, 155, 175, 0.15)" : "0 4px 10px rgba(0,0,0,0.04)",
+                        boxShadow: hoveredCardImg === project.id ? "0 25px 30px -5px rgba(0,0,0,0.12)" : "0 4px 10px rgba(0,0,0,0.04)",
                         transform: hoveredCardImg === project.id ? "scale(1.02)" : "scale(1)",
                         transition: "transform 0.3s ease, box-shadow 0.3s ease"
                       }}
@@ -303,6 +217,7 @@ Prebuilt Saas Software for
                     </div>
                   </div>
 
+                  {/* TEXT CONTENT CONTAINER */}
                   <div style={{ flex: "1 1 400px", textAlign: "left", display: "flex", flexDirection: "column", justifyContent: "center" }}>
                     <h3
                       onMouseEnter={() => setHoveredCardTitle(project.id)}
@@ -326,7 +241,7 @@ Prebuilt Saas Software for
                         onMouseLeave={() => setHoveredLink(null)}
                         style={{ color: hoveredLink === project.id ? "#069baf" : "#0a0a0a", fontWeight: 600, fontSize: "14.5px", textDecoration: hoveredLink === project.id ? "underline" : "none", transition: "color 0.2s ease" }}
                       >
-                        Learn More →
+                        View Website →
                       </Link>
                     </div>
                   </div>
@@ -345,7 +260,7 @@ Prebuilt Saas Software for
           <TestimonialsSection/>
         </motion.div>
 
-        {/* FAQ SECTION WITH ON-SCROLL ENTRY REVEAL */}
+        {/* FAQ SECTION */}
         <motion.div
           variants={fadeInUpVariant}
           initial="hidden"

@@ -22,7 +22,7 @@ export default function VideoSection() {
       <div className="relative z-10 w-full max-w-4xl mx-auto flex flex-col items-center">
         {/* Heading */}
         <h2
-          className="text-white text-center font-bold mb-12 tracking-tight"
+          className="text-white text-center font-light mb-12 tracking-tight"
           style={{
             fontSize: "clamp(32px, 5vw, 52px)",
             lineHeight: 1.1,

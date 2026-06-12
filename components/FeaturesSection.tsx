@@ -28,30 +28,32 @@ export default function FeaturesSection() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
   {/* Card 1: Custom Development */}
   <Link href="/customized" style={{ textDecoration: "none" }}>
-    <div className="bg-white border border-gray-200 rounded-2xl p-6 hover:shadow-[0_0_25px_rgba(55,177,164,0.5)] hover:scale-[1.01] transition-all duration-300 flex flex-col cursor-pointer">
-      <div className="relative w-full aspect-[16/10] mb-6 rounded-xl bg-gray-100 overflow-hidden border border-gray-100">
-        <Image
-          src="/features1.png"
-          alt="Custom Development App UI"
-          fill
-          className="object-cover"
-        />
-      </div>
+    <div className="bg-white border border-gray-300 rounded-2xl p-6 hover:shadow-[0_0_25px_rgba(55,177,164,0.5)] hover:scale-[1.01] transition-all duration-300 flex flex-col cursor-pointer">
+     <div className="relative w-full aspect-[16/10] mb-6 rounded-xl bg-gray-100 overflow-hidden border border-gray-300">
+  <Image
+    src="/custom.jpg"
+    alt="Custom Development App UI"
+    fill
+    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+    className="object-contain"
+    priority // Add this if the image is above the fold
+  />
+</div>
       <h3 className="text-[22px] font-semibold text-[#0a0a0a] mb-2 tracking-wide">
         Custom Development
       </h3>
       <p className="text-gray-500 text-sm leading-relaxed">
-        Build fully tailored web apps, SaaS platforms and mobile apps from scratch.
+        Monitor your finances live with clear, intuitive dashboards.
       </p>
     </div>
   </Link>
 
         {/* Card 2: Prebuilt Products */}
         <Link href="/prebuilt" style={{ textDecoration: "none" }}>
-          <div className="bg-white border border-gray-200 rounded-2xl p-6 hover:shadow-[0_0_25px_rgba(55,177,164,0.5)] hover:scale-[1.01] transition-all duration-300 flex flex-col cursor-pointer">
+          <div className="bg-white border border-gray-300 rounded-2xl p-6 hover:shadow-[0_0_25px_rgba(55,177,164,0.5)] hover:scale-[1.01] transition-all duration-300 flex flex-col cursor-pointer">
             <div className="relative w-full aspect-[16/10] mb-6 rounded-xl bg-gray-900 overflow-hidden border border-gray-100">
               <Image
-                src="/features2.png"
+                src="/prebuilt.png"
                 alt="Prebuilt Products UI"
                 fill
                 className="object-cover"
@@ -59,7 +61,7 @@ export default function FeaturesSection() {
             </div>
             <div className="flex flex-wrap items-center justify-between mb-2 gap-2">
               <h3 className="text-[22px] font-semibold text-[#0a0a0a] tracking-wide">
-                Prebuilt Products
+                SaaS Prebuilt @ 25,000 /-
               </h3>
             </div>
             <p className="text-gray-500 text-sm leading-relaxed">

@@ -11,27 +11,37 @@ export default function AboutUsPage() {
   const [hoveredMember, setHoveredMember] = useState<number | null>(null);
 
   const teamMembers = [
-    {
-      name: "Tushar Rawat",
-      role: "Founder",
-      img: "/team/tushar.jpg" // Replace with real images later
-    },
-    {
-      name: "Aastha Negi",
-      role: "Co-founder",
-      img: "/team/aastha.jpg"
-    },
-    {
-      name: "Aditya Agarwal",
-      role: "Chief Operations Head",
-      img: "/team/aditya.jpg"
-    },
-    {
-      name: "Utkarsh Rajoriya",
-      role: "Full Stack Developer",
-      img: "/team/utkarsh.jpg"
-    }
-  ];
+  {
+    name: "HA Lodhii",
+    role: "Founder & CEO",
+    img: "/hero.png"
+  },
+  {
+    name: "Zain Mirza",
+    role: "Chief Technical Officer",
+    img: "/Boy1.png"
+  },
+  {
+    name: "Saad Qureshi",
+    role: "Full Stack Developer",
+    img: "/Boy2.png"
+  },
+  {
+    name: "Omar Farooq",
+    role: "Flutter Developer",
+    img: "/Boy3.png"
+  },
+  {
+    name: "Mahnoor Siddiqui",
+    role: "Sales Head",
+    img: "/Girl1.png"
+  },
+  {
+    name: "Iqra Baig",
+    role: "Sales Executive",
+    img: "/Girl2.png"
+  },
+];
 
   const aboutFaqs = [
     { q: "Where is DevClyst based?", a: "DevClyst is based in Pakistan and serves clients across Pakistan, UAE, UK, and globally." },
@@ -214,21 +224,22 @@ export default function AboutUsPage() {
           </h2>
 
           {/* Responsive Team Grid Layout */}
-          <div className="team-grid-track" style={{ maxWidth: "1240px", margin: "0 auto" }}>
+          <div className="team-grid-track" style={{ maxWidth: "1020px", margin: "0 auto" }}>
             <style jsx>{`
-              .team-grid-track {
-                display: grid;
-                grid-template-columns: repeat(4, minmax(0, 1fr));
-                gap: 20px;
-                width: 100%;
-              }
-              @media (max-width: 1024px) {
-                .team-grid-track { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 24px !important; }
-              }
-              @media (max-width: 640px) {
-                .team-grid-track { grid-template-columns: repeat(1, minmax(0, 1fr)) !important; }
-              }
-            `}</style>
+  .team-grid-track {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    justify-content: center;
+    width: 100%;
+  }
+  @media (max-width: 1024px) {
+    .team-grid-track { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 24px !important; }
+  }
+  @media (max-width: 640px) {
+    .team-grid-track { grid-template-columns: repeat(1, minmax(0, 1fr)) !important; }
+  }
+`}</style>
 
             {teamMembers.map((member, idx) => (
               <motion.div
@@ -243,7 +254,10 @@ export default function AboutUsPage() {
                   position: "relative",
                   borderRadius: "20px",
                   overflow: "hidden",
-                  aspectRatio: "3 / 3.8",
+                  aspectRatio: "3 / 3.5",
+                  maxWidth: "260px",
+                  margin: "0 auto",
+                  width: "100%",
                   backgroundColor: "#f3f4f6",
                   boxShadow: hoveredMember === idx ? "0 20px 25px -5px rgba(0,0,0,0.06)" : "none",
                   transform: hoveredMember === idx ? "translateY(-4px)" : "translateY(0px)",
