@@ -36,11 +36,11 @@ export default function VideoSection() {
         <div className="w-full aspect-video rounded-2xl overflow-hidden shadow-2xl border border-white/10 bg-black/50 backdrop-blur-sm relative">
           <iframe
             className="absolute inset-0 w-full h-full"
-            src="https://www.youtube.com/embed/Zu38BqyKFYo"
+            src="https://www.youtube.com/embed/r1-N6tLZiGU"
             title="Video Placeholder"
-            frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
+            referrerPolicy="strict-origin-when-cross-origin"
           ></iframe>
         </div>
       </div>
