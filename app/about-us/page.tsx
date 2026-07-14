@@ -11,37 +11,48 @@ export default function AboutUsPage() {
   const [hoveredMember, setHoveredMember] = useState<number | null>(null);
 
   const teamMembers = [
-  {
-    name: "HA Lodhii",
-    role: "Founder & CEO",
-    img: "/hero.png"
-  },
-  {
-    name: "Zain Mirza",
-    role: "Chief Technical Officer",
-    img: "/Boy1.png"
-  },
-  {
-    name: "Saad Qureshi",
-    role: "Full Stack Developer",
-    img: "/Boy2.png"
-  },
-  {
-    name: "Omar Farooq",
-    role: "Flutter Developer",
-    img: "/Boy3.png"
-  },
-  {
-    name: "Mahnoor Siddiqui",
-    role: "Sales Head",
-    img: "/Girl1.png"
-  },
-  {
-    name: "Iqra Baig",
-    role: "Sales Executive",
-    img: "/Girl2.png"
-  },
-];
+    {
+      name: "HA Lodhii",
+      role: "Founder & CEO",
+      img: "/her.png",
+      remark: "Leads product vision and client strategy end-to-end.", 
+    },
+    {
+      name: "Sohaib Tahir",
+      role: "Co-Founder",
+      img: "/Sohaib.png",
+      position: "10% 0%",
+      remark: "Drives growth, partnerships, and business development.",
+    },
+    {
+      name: "Saad Qureshi",
+      role: "Full Stack Developer",
+      img: "/Boy2.png",
+      position: "50% 15%",
+      remark: "Builds and ships the core web platform.",
+    },
+    {
+      name: "Omar Farooq",
+      role: "Flutter Developer",
+      img: "/Boy3.png",
+      position: "50% 15%",
+      remark: "Crafts fast, native-feeling mobile experiences.",
+    },
+    {
+      name: "Mahnoor Siddiqui",
+      role: "Sales Head",
+      img: "/Girl1.png",
+      position: "50% 15%",
+      remark: "Owns client relationships from pitch to close.",
+    },
+    {
+      name: "Iqra Baig",
+      role: "Sales Executive",
+      img: "/Girl2.png",
+      position: "50% 15%",
+      remark: "Handles outreach and early client conversations.",
+    },
+  ];
 
   const aboutFaqs = [
     { q: "Where is DevClyst based?", a: "DevClyst is based in Pakistan and serves clients across Pakistan, UAE, UK, and globally." },
@@ -54,10 +65,6 @@ export default function AboutUsPage() {
   return (
     <>
     <main style={{ minHeight: "100vh", backgroundColor: "transparent", color: "#0a0a0a" }}>
-        
-        {/* ─────────────────────────────────────
-            SECTION 1 — HERO
-            ───────────────────────────────────── */}
         <section
           style={{
             position: "relative",
@@ -67,9 +74,6 @@ export default function AboutUsPage() {
             overflow: "hidden"
           }}
         >
-          
-
-          {/* Object 1: Left Floating Loop */}
           <motion.div 
             animate={{ y: ["-50%", "-62%", "-50%"] }}
             transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
@@ -90,8 +94,6 @@ export default function AboutUsPage() {
               style={{ objectFit: "contain" }}
             />
           </motion.div>
-
-          {/* Object 2: Right Floating Loop */}
           <motion.div 
             animate={{ y: ["-50%", "-38%", "-50%"] }}
             transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
@@ -144,22 +146,13 @@ export default function AboutUsPage() {
             </p>
           </div>
         </section>
-
-        {/* ─────────────────────────────────────
-            SECTION 2 — DEVELOPER STRIP
-            ───────────────────────────────────── */}
         <DeveloperStrip />
-
-        {/* ─────────────────────────────────────
-            SECTIONS 3 & 4 — STORY & WHO WE ARE
-            ───────────────────────────────────── */}
         <motion.div
           variants={fadeInUpVariant}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
         >
-          {/* SECTION 3 — STORY SECTION */}
           <section style={{ maxWidth: "860px", margin: "0 auto", padding: "100px 24px", textAlign: "left" }}>
             <h2 style={{ fontFamily: "var(--font-clash), sans-serif", fontWeight: 700, fontSize: "clamp(28px, 4vw, 42px)", color: "#0a0a0a", marginBottom: "24px" }}>
               Building the Digital Future
@@ -171,8 +164,6 @@ export default function AboutUsPage() {
               From a small team of passionate developers to a full-service agency working with clients across Pakistan, UAE, and beyond — our journey has always been driven by one mission: to make technology simple, scalable, and impactful.
             </p>
           </section>
-
-          {/* SECTION 4 — WHO WE ARE */}
           <section style={{ maxWidth: "860px", margin: "0 auto", padding: "0 24px 100px", textAlign: "left" }}>
             <h3 style={{ fontFamily: "var(--font-clash), sans-serif", fontWeight: 700, fontSize: "26px", color: "#0a0a0a", marginBottom: "16px" }}>
               Who We Are
@@ -185,13 +176,7 @@ export default function AboutUsPage() {
             </p>
           </section>
         </motion.div>
-
-        {/* ─────────────────────────────────────
-            SECTION 5 — TEAM BEHIND WONDERS
-            ───────────────────────────────────── */}
         <section style={{ padding: "80px 24px 100px", textAlign: "center", backgroundColor: "#ffffff" }}>
-          
-          {/* Top Pill Label */}
           <div
             style={{
               border: "1px solid #e5e7eb",
@@ -207,8 +192,6 @@ export default function AboutUsPage() {
           >
             Our Team
           </div>
-
-          {/* Heading */}
           <h2
             style={{
               fontFamily: "var(--font-clash), sans-serif",
@@ -222,8 +205,6 @@ export default function AboutUsPage() {
           >
             Team Behind Wonders
           </h2>
-
-          {/* Responsive Team Grid Layout */}
           <div className="team-grid-track" style={{ maxWidth: "1020px", margin: "0 auto" }}>
             <style jsx>{`
   .team-grid-track {
@@ -241,93 +222,152 @@ export default function AboutUsPage() {
   }
 `}</style>
 
-            {teamMembers.map((member, idx) => (
-              <motion.div
-                key={idx}
-                variants={fadeInUpVariant}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                onMouseEnter={() => setHoveredMember(idx)}
-                onMouseLeave={() => setHoveredMember(null)}
-                style={{
-                  position: "relative",
-                  borderRadius: "20px",
-                  overflow: "hidden",
-                  aspectRatio: "3 / 3.5",
-                  maxWidth: "260px",
-                  margin: "0 auto",
-                  width: "100%",
-                  backgroundColor: "#f3f4f6",
-                  boxShadow: hoveredMember === idx ? "0 20px 25px -5px rgba(0,0,0,0.06)" : "none",
-                  transform: hoveredMember === idx ? "translateY(-4px)" : "translateY(0px)",
-                  transition: "transform 0.3s ease, box-shadow 0.3s ease"
-                }}
-              >
-                {/* Fallback pattern block until exact imagery paths are supplied */}
-                <div style={{ position: "absolute", inset: 0, backgroundColor: "#e2e8f0", zIndex: 1 }} />
-
-                {/* Profile Image Asset Layer */}
-                <Image
-                  src={member.img}
-                  alt={member.name}
-                  fill
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                  style={{ objectFit: "cover", zIndex: 2 }}
-                  priority={idx < 2}
-                />
-
-                {/* Overlaid Bottom Identity Card (Frosted Glass Effect Layout) */}
-                <div
+            {teamMembers.map((member, idx) => {
+              const isHovered = hoveredMember === idx;
+              return (
+                <motion.div
+                  key={idx}
+                  variants={fadeInUpVariant}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  onMouseEnter={() => setHoveredMember(idx)}
+                  onMouseLeave={() => setHoveredMember(null)}
                   style={{
-                    position: "absolute",
-                    bottom: "20px",
-                    left: "16px",
-                    right: "16px",
-                    backgroundColor: "rgba(255, 255, 255, 0.88)",
-                    backdropFilter: "blur(12px)",
-                    WebkitBackdropFilter: "blur(12px)",
-                    borderRadius: "16px",
-                    padding: "16px 12px",
-                    zIndex: 3,
-                    textAlign: "center",
-                    border: "1px solid rgba(255, 255, 255, 0.4)",
-                    boxShadow: "0 8px 32px 0 rgba(0, 0, 0, 0.04)"
+                    position: "relative",
+                    borderRadius: "20px",
+                    overflow: "hidden",
+                    aspectRatio: "3 / 3.5",
+                    maxWidth: "260px",
+                    margin: "0 auto",
+                    width: "100%",
+                    backgroundColor: "#0a0a0a",
+                    cursor: "default",
+                    boxShadow: isHovered
+                      ? "0 24px 40px -12px rgba(0,0,0,0.35)"
+                      : "0 4px 12px -4px rgba(0,0,0,0.08)",
+                    transform: isHovered ? "translateY(-6px)" : "translateY(0px)",
+                    transition: "transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s ease"
                   }}
                 >
-                  <h4
+                  <div style={{ position: "absolute", inset: 0, backgroundColor: "#e2e8f0", zIndex: 1 }} />
+                  <div
                     style={{
-                      margin: "0 0 4px 0",
-                      fontSize: "16.5px",
-                      fontWeight: 700,
-                      color: "#0f172a",
-                      fontFamily: "sans-serif"
+                      position: "absolute",
+                      inset: 0,
+                      zIndex: 2,
+                      overflow: "hidden",
                     }}
                   >
-                    {member.name}
-                  </h4>
-                  <p
+                    <Image
+                      src={member.img}
+                      alt={member.name}
+                      fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                      style={{
+                        objectFit: "cover",
+                        objectPosition: member.position || "50% 15%",
+                        transform: isHovered ? "scale(1.07)" : "scale(1)",
+                        transition: "transform 0.6s cubic-bezier(0.22, 1, 0.36, 1)"
+                      }}
+                      priority={idx < 2}
+                    />
+                  </div>
+                  <div
                     style={{
-                      margin: 0,
-                      fontSize: "13px",
-                      color: "#64748b",
-                      fontWeight: 500,
-                      fontFamily: "sans-serif"
+                      position: "absolute",
+                      inset: 0,
+                      zIndex: 3,
+                      background: isHovered
+                        ? "linear-gradient(to top, rgba(4,10,20,0.94) 0%, rgba(4,10,20,0.55) 45%, rgba(4,10,20,0.05) 75%, rgba(4,10,20,0) 100%)"
+                        : "linear-gradient(to top, rgba(4,10,20,0.82) 0%, rgba(4,10,20,0.15) 55%, rgba(4,10,20,0) 100%)",
+                      transition: "background 0.4s ease",
+                      pointerEvents: "none",
+                    }}
+                  />
+                  <div
+                    style={{
+                      position: "absolute",
+                      top: "16px",
+                      right: "16px",
+                      zIndex: 4,
+                      width: "8px",
+                      height: "8px",
+                      borderRadius: "50%",
+                      backgroundColor: "#069BAF",
+                      opacity: isHovered ? 1 : 0,
+                      transform: isHovered ? "scale(1)" : "scale(0.4)",
+                      transition: "opacity 0.3s ease, transform 0.3s ease",
+                      boxShadow: "0 0 0 4px rgba(6,155,175,0.25)"
+                    }}
+                  />
+                  <div
+                    style={{
+                      position: "absolute",
+                      bottom: 0,
+                      left: 0,
+                      right: 0,
+                      zIndex: 5,
+                      padding: "18px 20px",
+                      textAlign: "left",
                     }}
                   >
-                    {member.role}
-                  </p>
-                </div>
-              </motion.div>
-            ))}
+                    <h4
+                      style={{
+                        margin: 0,
+                        fontSize: "18px",
+                        fontWeight: 700,
+                        color: "#ffffff",
+                        fontFamily: "sans-serif",
+                        letterSpacing: "-0.01em",
+                        transform: isHovered ? "translateY(0px)" : "translateY(0px)",
+                        transition: "transform 0.4s ease"
+                      }}
+                    >
+                      {member.name}
+                    </h4>
+                    <p
+                      style={{
+                        margin: "4px 0 0 0",
+                        fontSize: "12px",
+                        fontWeight: 600,
+                        textTransform: "uppercase",
+                        letterSpacing: "0.06em",
+                        color: "#069BAF",
+                        fontFamily: "sans-serif",
+                      }}
+                    >
+                      {member.role}
+                    </p>
+                    <div
+                      style={{
+                        maxHeight: isHovered ? "60px" : "0px",
+                        opacity: isHovered ? 1 : 0,
+                        overflow: "hidden",
+                        transition: "max-height 0.4s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.3s ease, margin-top 0.4s ease",
+                        marginTop: isHovered ? "8px" : "0px",
+                      }}
+                    >
+                      <p
+                        style={{
+                          margin: 0,
+                          fontSize: "12.5px",
+                          lineHeight: 1.5,
+                          color: "rgba(255,255,255,0.8)",
+                          fontFamily: "sans-serif",
+                          fontWeight: 400,
+                        }}
+                      >
+                        {member.remark}
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+              );
+            })}
           </div>
         </section>
-
-        {/* ─────────────────────────────────────
-            SECTION 6 — FAQ
-            ───────────────────────────────────── */}
         <FAQSection faqs={aboutFaqs} />
-
       </main>
     </>
   );

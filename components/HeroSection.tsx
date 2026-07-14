@@ -35,10 +35,10 @@ export default function HeroSection() {
           transition={{ duration: 0.75, ease: "easeOut" }}
           style={{
             width: '100%',
-            maxWidth: '580px',
-            height: '510px',
-            marginTop: '-20px',
-            marginBottom: '-140px',
+            maxWidth: '460px',   // was 580px
+            height: '380px',     // was 510px
+            marginTop: '8px',    // was -20px
+            marginBottom: '-40px', // was -140px
             position: 'relative',
             zIndex: 1,
             overflow: 'hidden',
@@ -47,8 +47,8 @@ export default function HeroSection() {
           <Image
             src="/hero.png"
             alt="DevClyst founder"
-            width={580}
-            height={700}
+            width={380}
+            height={460}
             style={{
               width: '100%',
               height: '100%',
