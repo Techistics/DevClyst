@@ -35,10 +35,10 @@ export default function HeroSection() {
           transition={{ duration: 0.75, ease: "easeOut" }}
           style={{
             width: '100%',
-            maxWidth: '460px',   // was 580px
-            height: '380px',     // was 510px
-            marginTop: '8px',    // was -20px
-            marginBottom: '-40px', // was -140px
+            maxWidth: '460px',
+            height: '380px',
+            marginTop: '54px', 
+            marginBottom: '-100px',
             position: 'relative',
             zIndex: 1,
             overflow: 'hidden',
@@ -46,13 +46,13 @@ export default function HeroSection() {
         >
           <Image
             src="/hero.png"
-            alt="DevClyst founder"
+            alt="DevClyst founders"
             width={380}
             height={460}
             style={{
               width: '100%',
               height: '100%',
-              objectFit: 'cover',
+              objectFit: 'contain',
               objectPosition: '50% 15%',
               display: 'block',
             }}
@@ -75,7 +75,7 @@ export default function HeroSection() {
             style={{
               fontFamily: "var(--font-clash), sans-serif",
               fontSize: "clamp(52px, 8vw, 96px)",
-              fontWeight: 550,
+              fontWeight: 350, 
               lineHeight: 1.0,
               color: "#0a0a0a",
               margin: 0,
@@ -106,7 +106,7 @@ export default function HeroSection() {
             onMouseEnter={() => setIsExploreHovered(true)}
             onMouseLeave={() => setIsExploreHovered(false)}
             style={{
-              background: isExploreHovered ? "#069BAF" : "#0a0a0a", // Toggles black to green on hover
+              background: isExploreHovered ? "#069BAF" : "#0a0a0a",
               color: "#fff",
               borderRadius: "999px",
               padding: "12px 28px",
@@ -114,7 +114,7 @@ export default function HeroSection() {
               fontWeight: 600,
               textDecoration: "none",
               display: "inline-block",
-              transition: "background-color 0.3s ease", // Makes the transition smooth
+              transition: "background-color 0.3s ease",
             }}
           >
             Let&apos;s Explore

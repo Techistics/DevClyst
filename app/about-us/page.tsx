@@ -15,7 +15,7 @@ export default function AboutUsPage() {
       name: "HA Lodhii",
       role: "Founder & CEO",
       img: "/her.png",
-      remark: "Leads product vision and client strategy end-to-end.", 
+      remark: "Leads product vision and client strategy end-to-end.",
     },
     {
       name: "Sohaib Tahir",
@@ -64,7 +64,7 @@ export default function AboutUsPage() {
 
   return (
     <>
-    <main style={{ minHeight: "100vh", backgroundColor: "transparent", color: "#0a0a0a" }}>
+      <main style={{ minHeight: "100vh", backgroundColor: "transparent", color: "#0a0a0a" }}>
         <section
           style={{
             position: "relative",
@@ -74,43 +74,43 @@ export default function AboutUsPage() {
             overflow: "hidden"
           }}
         >
-          <motion.div 
+          <motion.div
             animate={{ y: ["-50%", "-62%", "-50%"] }}
             transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
-            style={{ 
-              position: "absolute", 
-              left: "2%", 
-              top: "55%", 
+            style={{
+              position: "absolute",
+              left: "2%",
+              top: "55%",
               zIndex: 1,
               pointerEvents: "none",
               opacity: 0.9
             }}
           >
-            <Image 
-              src="/object1.png" 
-              alt="Floating shape left" 
-              width={150} 
-              height={150} 
+            <Image
+              src="/object1.png"
+              alt="Floating shape left"
+              width={150}
+              height={150}
               style={{ objectFit: "contain" }}
             />
           </motion.div>
-          <motion.div 
+          <motion.div
             animate={{ y: ["-50%", "-38%", "-50%"] }}
             transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-            style={{ 
-              position: "absolute", 
-              right: "2%", 
-              top: "40%", 
+            style={{
+              position: "absolute",
+              right: "2%",
+              top: "40%",
               zIndex: 1,
               pointerEvents: "none",
               opacity: 0.9
             }}
           >
-            <Image 
-              src="/object2.png" 
-              alt="Floating shape right" 
-              width={160} 
-              height={160} 
+            <Image
+              src="/object2.png"
+              alt="Floating shape right"
+              width={160}
+              height={160}
               style={{ objectFit: "contain" }}
             />
           </motion.div>
@@ -235,28 +235,29 @@ export default function AboutUsPage() {
                   onMouseLeave={() => setHoveredMember(null)}
                   style={{
                     position: "relative",
-                    borderRadius: "20px",
-                    overflow: "hidden",
-                    aspectRatio: "3 / 3.5",
+                    borderRadius: "24px",
                     maxWidth: "260px",
                     margin: "0 auto",
                     width: "100%",
-                    backgroundColor: "#0a0a0a",
+                    backgroundColor: "#ffffff",
+                    border: "1px solid #eef0f3",
                     cursor: "default",
+                    padding: "10px",
                     boxShadow: isHovered
-                      ? "0 24px 40px -12px rgba(0,0,0,0.35)"
-                      : "0 4px 12px -4px rgba(0,0,0,0.08)",
-                    transform: isHovered ? "translateY(-6px)" : "translateY(0px)",
-                    transition: "transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s ease"
+                      ? "0 20px 32px -14px rgba(15,23,42,0.16)"
+                      : "0 1px 2px rgba(15,23,42,0.04)",
+                    transform: isHovered ? "translateY(-4px)" : "translateY(0px)",
+                    transition: "transform 0.55s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.55s ease"
                   }}
                 >
-                  <div style={{ position: "absolute", inset: 0, backgroundColor: "#e2e8f0", zIndex: 1 }} />
+                  {/* IMAGE */}
                   <div
                     style={{
-                      position: "absolute",
-                      inset: 0,
-                      zIndex: 2,
+                      position: "relative",
+                      borderRadius: "16px",
                       overflow: "hidden",
+                      aspectRatio: "1 / 1",
+                      backgroundColor: "#f1f3f6",
                     }}
                   >
                     <Image
@@ -267,93 +268,71 @@ export default function AboutUsPage() {
                       style={{
                         objectFit: "cover",
                         objectPosition: member.position || "50% 15%",
-                        transform: isHovered ? "scale(1.07)" : "scale(1)",
-                        transition: "transform 0.6s cubic-bezier(0.22, 1, 0.36, 1)"
+                        filter: isHovered ? "grayscale(0)" : "grayscale(1)",
+                        transform: isHovered ? "scale(1.04)" : "scale(1)",
+                        transition: "filter 0.7s ease, transform 0.8s cubic-bezier(0.22, 1, 0.36, 1)"
                       }}
                       priority={idx < 2}
                     />
+                    {/* status dot */}
+                    <div
+                      style={{
+                        position: "absolute",
+                        top: "12px",
+                        right: "12px",
+                        width: "8px",
+                        height: "8px",
+                        borderRadius: "50%",
+                        backgroundColor: "#069BAF",
+                        boxShadow: "0 0 0 4px rgba(255,255,255,0.85)",
+                        opacity: isHovered ? 1 : 0,
+                        transform: isHovered ? "scale(1)" : "scale(0.5)",
+                        transition: "opacity 0.25s ease, transform 0.25s ease",
+                      }}
+                    />
                   </div>
-                  <div
-                    style={{
-                      position: "absolute",
-                      inset: 0,
-                      zIndex: 3,
-                      background: isHovered
-                        ? "linear-gradient(to top, rgba(4,10,20,0.94) 0%, rgba(4,10,20,0.55) 45%, rgba(4,10,20,0.05) 75%, rgba(4,10,20,0) 100%)"
-                        : "linear-gradient(to top, rgba(4,10,20,0.82) 0%, rgba(4,10,20,0.15) 55%, rgba(4,10,20,0) 100%)",
-                      transition: "background 0.4s ease",
-                      pointerEvents: "none",
-                    }}
-                  />
-                  <div
-                    style={{
-                      position: "absolute",
-                      top: "16px",
-                      right: "16px",
-                      zIndex: 4,
-                      width: "8px",
-                      height: "8px",
-                      borderRadius: "50%",
-                      backgroundColor: "#069BAF",
-                      opacity: isHovered ? 1 : 0,
-                      transform: isHovered ? "scale(1)" : "scale(0.4)",
-                      transition: "opacity 0.3s ease, transform 0.3s ease",
-                      boxShadow: "0 0 0 4px rgba(6,155,175,0.25)"
-                    }}
-                  />
-                  <div
-                    style={{
-                      position: "absolute",
-                      bottom: 0,
-                      left: 0,
-                      right: 0,
-                      zIndex: 5,
-                      padding: "18px 20px",
-                      textAlign: "left",
-                    }}
-                  >
+
+                  {/* TEXT */}
+                  <div style={{ padding: "16px 6px 10px", textAlign: "left" }}>
                     <h4
                       style={{
                         margin: 0,
-                        fontSize: "18px",
-                        fontWeight: 700,
-                        color: "#ffffff",
+                        fontSize: "16px",
+                        fontWeight: 600,
+                        color: "#0a0a0a",
                         fontFamily: "sans-serif",
                         letterSpacing: "-0.01em",
-                        transform: isHovered ? "translateY(0px)" : "translateY(0px)",
-                        transition: "transform 0.4s ease"
                       }}
                     >
                       {member.name}
                     </h4>
                     <p
                       style={{
-                        margin: "4px 0 0 0",
-                        fontSize: "12px",
-                        fontWeight: 600,
-                        textTransform: "uppercase",
-                        letterSpacing: "0.06em",
-                        color: "#069BAF",
+                        margin: "3px 0 0 0",
+                        fontSize: "12.5px",
+                        fontWeight: 500,
+                        color: isHovered ? "#069BAF" : "#94a3b8",
                         fontFamily: "sans-serif",
+                        transition: "color 0.3s ease",
                       }}
                     >
                       {member.role}
                     </p>
                     <div
                       style={{
-                        maxHeight: isHovered ? "60px" : "0px",
+                        maxHeight: isHovered ? "48px" : "0px",
                         opacity: isHovered ? 1 : 0,
                         overflow: "hidden",
-                        transition: "max-height 0.4s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.3s ease, margin-top 0.4s ease",
+                        transition: "max-height 0.35s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.25s ease, margin-top 0.3s ease",
                         marginTop: isHovered ? "8px" : "0px",
                       }}
                     >
                       <p
                         style={{
                           margin: 0,
-                          fontSize: "12.5px",
+                          fontSize: "12px",
                           lineHeight: 1.5,
-                          color: "rgba(255,255,255,0.8)",
+                          color: "#64748b",
                           fontFamily: "sans-serif",
                           fontWeight: 400,
                         }}
